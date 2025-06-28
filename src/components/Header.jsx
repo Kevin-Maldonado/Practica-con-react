@@ -1,3 +1,5 @@
+import guitarra from "./Guitarra";
+
 export default function Header({car}) {
   return (
     <header className="py-5 header">
@@ -28,13 +30,13 @@ export default function Header({car}) {
                                 </thead>
                                 <tbody>
                                    { car.map(guitarra => (
-                                    <tr>
+                                    <tr key={guitarra.id}>
                                         <td>
-                                            <img className="img-fluid" src="./public/img/guitarra_02.jpg" alt="imagen guitarra" />
+                                            <img className="img-fluid" src={`/img/${guitarra.image}.jpg`} alt="imagen guitarra" />
                                         </td>
-                                        <td>SRV</td>
+                                        <td>{guitarra.name}</td>
                                         <td className="fw-bold">
-                                                $299
+                                                ${guitarra.price}
                                         </td>
                                         <td className="flex align-items-start gap-4">
                                             <button

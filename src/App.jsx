@@ -5,21 +5,24 @@ import Footer from './components/footer'
 import Guitarra from './components/Guitarra'
 import { db } from './db'
 
-function addToCart(item) {
-  const itemExists = car.findIndex(guitarra => guitarra.id === item.id);
-  if (itemExists>=0) {
-    car[itemExists].quantity += 1
-    const updatedCar = [...car]
-    updatedCar[itemExists] = quantity ++
-    setCar(updatedCar)
-  }
-  else {
-    item.quantity = 1
-    car.push(item)
-    setCar([...car,item])
-}}
+
 export default function App() {
   const [data] = useState(db)
+  const [car, setCar] = useState([])
+
+  function addToCart(item) {
+    const itemExists = car.findIndex(guitarra => guitarra.id === item.id);
+    if (itemExists>=0) {
+      car[itemExists].quantity += 1
+      const updatedCar = [...car]
+      updatedCar[itemExists] = quantity ++
+      setCar(updatedCar)
+    }
+    else {
+      item.quantity = 1
+      car.push(item)
+      setCar([...car,item])
+}}
   return (
     <>
     

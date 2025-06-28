@@ -1,4 +1,4 @@
-export default function guitarra({ guitarra }) {
+export default function Guitarra({ guitarra, addToCart }) {
     const { id, name, image, description, price } = guitarra;
     return (
     <div className="col-md-6 col-lg-4 my-4 row align-items-center">
